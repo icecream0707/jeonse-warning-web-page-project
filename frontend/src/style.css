@@ -1,0 +1,27 @@
+:root { color-scheme: light dark; --bg: #fafafa; --fg: #1d1d1f; --card: #fff; --line: #ddd; --muted: #666; }
+@media (prefers-color-scheme: dark) { :root { --bg: #151517; --fg: #eee; --card: #202024; --line: #3a3a40; --muted: #aaa; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: system-ui, "Malgun Gothic", sans-serif; line-height: 1.55; }
+main { max-width: 640px; margin: 0 auto; padding: 24px 16px 64px; }
+h1 { margin: 0 0 4px; font-size: 1.6rem; }
+h2 { margin: 0 0 12px; font-size: 1.15rem; }
+.lead, .note, small, .disclaimer { color: var(--muted); font-size: .9rem; }
+.row { display: flex; gap: 8px; margin: 16px 0; }
+input, select, button { font: inherit; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--fg); }
+.row input { flex: 1; min-width: 0; }
+button { cursor: pointer; background: #2563eb; color: #fff; border-color: #2563eb; }
+button.link { display: block; width: 100%; margin-top: 8px; text-align: left; background: var(--card); color: var(--fg); border-color: var(--line); }
+.card { margin: 16px 0; padding: 16px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+label { display: grid; gap: 4px; margin-bottom: 12px; font-size: .9rem; }
+.error { color: #d64545; }
+.bar { position: relative; display: flex; height: 18px; margin: 20px 0 28px; border-radius: 9px; overflow: visible; }
+.bar i { display: block; height: 100%; }
+.bar i:first-child { border-radius: 9px 0 0 9px; }
+.bar i:nth-child(3) { border-radius: 0 9px 9px 0; }
+.marker { position: absolute; top: -6px; width: 4px; height: 30px; margin-left: -2px; background: var(--fg); border-radius: 2px; }
+.tick { position: absolute; top: 22px; transform: translateX(-50%); font-size: .75rem; color: var(--muted); }
+table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+td { padding: 4px 8px; border-bottom: 1px solid var(--line); }
+ol { padding-left: 20px; margin: 0; }
+li { margin-bottom: 6px; }
+li.hot { font-weight: 600; color: #d64545; }

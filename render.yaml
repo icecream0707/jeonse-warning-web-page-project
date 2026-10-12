@@ -1,0 +1,13 @@
+# Render 무료 웹 서비스 설정. React를 빌드한 뒤 FastAPI가 화면과 API를 함께 서빙한다.
+services:
+  - type: web
+    name: jeonse-risk-check
+    runtime: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt && cd frontend && npm install && npm run build
+    startCommand: cd backend && uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: JUSO_KEY
+        sync: false # Render 화면에서 직접 입력한다. 저장소에는 올리지 않는다.
